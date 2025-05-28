@@ -1,0 +1,278 @@
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --highlight: #3e3e3e;
+  --card-bg: #1f1f1f;
+  --card-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  --border-color: #444;
+}
+
+html,
+body {
+margin: 0;
+padding: 0;
+height: 100%;
+color-scheme: dark;
+}
+
+body {
+font-family: "Segoe UI",sans-serif;
+text-align: center;
+background: var(--background);
+color: var(--foreground);
+}
+
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+.page-container {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+.search-bar {
+display: flex;
+justify-content: center;
+padding: 20px;
+background: var(--highlight);
+width: 80%;
+margin: 20px auto;
+border: 1px solid var(--border-color);
+border-radius: 5px;
+font-size: 16px;
+}
+
+.recipe-list {
+margin-top: 20px;
+flex-grow: 1; 
+padding: 0 15px;
+padding-bottom: 70px;
+}
+
+.recipe-card,
+.fav-recipe-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+background: var(--card-bg);
+border-radius: 10px;
+padding: 15px;
+margin: 10px 0;
+box-shadow: var(--card-shadow);
+transition: transform 0.3s ease;
+}
+
+.recipe-card:hover,
+.fav-recipe-card:hover {
+transform: translateY(-5px);
+}
+
+.recipe-image {
+width: 200px;
+height: 200px;
+object-fit: cover;
+margin-bottom: 15px;
+border-radius: 8px;
+}
+
+.fav-button {
+margin-left: auto;
+background: none;
+border: none;
+font-size: 20px;
+cursor: pointer;
+color: var(--foreground);
+}
+
+.fav-recipe-card {
+justify-content: space-between;
+flex-direction: row;
+}
+
+.fav-image {
+width: 50px;
+height: 50px;
+border-radius: 8px;
+margin-right: 15px;
+}
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  justify-content: space-between;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.nav-btn.active {
+  color: #f0a5b4;
+  transform: scale(1.2);
+}
+
+.nav-btn:hover {
+  transform: scale(1.2);
+}
+/* Form container styling */
+.add-recipe-form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-top: 20px;
+
+
+}
+
+/* Form input styling */
+.add-recipe-form input, .add-recipe-form button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Form button styling */
+.add-recipe-form button {
+  background-color: #f0a5b4;
+  color: #111;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+
+
+.sort-dropdown {
+display:flex;
+justify-content: center;
+width: 80%;
+margin: 20px auto;
+border-radius: 5px;
+background: var(--highlight);
+font-size: 16px;
+border: 1px solid var(--border-color);
+}
+
+.sort-dropdown select {
+padding: 10px;
+border: none;
+border-radius: 5px;
+background: var(--highlight);
+color: var(--foreground);
+}
+
+.delete-button {
+background: none;
+border: none;
+font-size: 20px;
+cursor: pointer;
+color: var(--foreground);
+}
+
+.update-button {
+background: none;
+border: none;
+font-size: 20px;
+cursor: pointer;
+color: var(--foreground);
+}
+
+.warning {
+background-color: yellow;
+color: red;
+padding: 10px;
+font-weight: bold;
+text-align: center;
+margin-bottom: 10px;
+}
+
+
+.loading {
+text-align: center;
+font-weight: bold;
+padding: 10px;
+}
+
+.add-recipe-form select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #333;
+  color: #f0a5b4;
+}
+
+.add-category-form {
+  margin-top: 20px;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.add-category-form input,
+.add-category-form textarea,
+.add-category-form button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.add-category-form button {
+  background-color: #f0a5b4;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+  padding-bottom: 70px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.delete-category-button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-category-button:hover {
+  background-color: #cc0000;
+}
+
