@@ -462,16 +462,16 @@ h1, h2, h3 {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   background: var(--nav-bg);
-  padding: 10px 0 0 0;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
   z-index: 1000;
   border-top: 1.5px solid var(--border-color);
-  box-shadow: 0 -2px 12px rgba(60,60,130,0.04);
+  box-shadow: 0 -4px 24px rgba(60,60,130,0.10);
   height: 70px;
+  padding: 0 24px;
 }
 
 .nav-btn {
@@ -487,6 +487,8 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 .nav-btn.active {
   color: var(--nav-active);
@@ -501,10 +503,6 @@ h1, h2, h3 {
 }
 
 .fab-btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-32px);
-  bottom: 0;
   background: var(--accent);
   color: #fff;
   border: none;
@@ -516,13 +514,16 @@ h1, h2, h3 {
   justify-content: center;
   font-size: 38px;
   box-shadow: 0 4px 24px rgba(255,64,129,0.18);
-  z-index: 1100;
+  z-index: 2;
   cursor: pointer;
   transition: background 0.18s, transform 0.18s;
+  margin: 0 12px;
+  position: static;
+  transform: none;
 }
 .fab-btn:active, .fab-btn:hover {
   background: #e91e63;
-  transform: translateX(-50%) translateY(-36px) scale(1.08);
+  transform: scale(1.08);
 }
 
 .add-recipe-form, .add-category-form {
@@ -655,8 +656,8 @@ h1, h2, h3 {
     max-width: 99vw;
   }
   .bottom-nav {
-    padding: 6px 0 0 0;
     height: 64px;
+    padding: 0 8px;
   }
   .nav-btn {
     font-size: 24px;
@@ -667,7 +668,7 @@ h1, h2, h3 {
     width: 54px;
     height: 54px;
     font-size: 30px;
-    transform: translateX(-50%) translateY(-24px);
+    margin: 0 6px;
   }
 }
 /*
