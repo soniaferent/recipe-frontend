@@ -474,45 +474,35 @@ h1, h2, h3 {
   padding: 0;
 }
 
-.nav-btn {
+.nav-btn, .fab-btn {
   background: none;
   border: none;
   color: #ff4081;
   font-size: 28px;
   margin: 0 8px;
   cursor: pointer;
-  transition: color 0.18s, transform 0.18s, background 0.18s;
+  transition: color 0.18s;
   border-radius: 8px;
   padding: 8px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.nav-btn.active, .nav-btn:hover {
-  color: #fff;
-  background: #ff4081;
+.nav-btn i, .fab-btn i {
+  color: inherit;
+  font-size: 28px;
+}
+.nav-btn.active i, .fab-btn.active i {
+  color: #c2185b;
+}
+.nav-btn:focus i, .fab-btn:focus i {
+  color: #c2185b;
 }
 
-.fab-btn {
-  /* Remove FAB styling, make it look like a normal nav button */
+/* Remove background and color fill on hover/active */
+.nav-btn.active, .nav-btn:hover, .fab-btn.active, .fab-btn:hover {
   background: none;
-  border: none;
-  color: #ff4081;
-  font-size: 28px;
-  margin: 0 8px;
-  cursor: pointer;
-  transition: color 0.18s, transform 0.18s, background 0.18s;
-  border-radius: 8px;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: static;
-  box-shadow: none;
-}
-.fab-btn:active, .fab-btn:hover {
-  color: #fff;
-  background: #ff4081;
+  color: #c2185b;
 }
 
 .add-recipe-form, .add-category-form {
@@ -651,6 +641,9 @@ h1, h2, h3 {
     font-size: 22px;
     padding: 6px 8px;
     margin: 0 2px;
+  }
+  .nav-btn i, .fab-btn i {
+    font-size: 22px;
   }
 }
 /*

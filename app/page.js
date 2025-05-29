@@ -193,19 +193,19 @@ export default function App() {
               {page === "favorites" && <FavoritesPage favorites={favorites} setPage={setPage} />}
               {page === "add" && <AddRecipePage setPage={setPage} addRecipe={addRecipe} categories={categories}setCategories={setCategories}/>}
               <nav className="bottom-nav">
-                <button onClick={() => setPage("home")} className={`nav-btn ${page === "home" ? "active" : ""}`} aria-label="Home">
-                  <i className="fa-solid fa-house"></i>
-                </button>
-                <button onClick={() => setPage("favorites")} className={`nav-btn ${page === "favorites" ? "active" : ""}`} aria-label="Favorites">
-                  <i className="fa-solid fa-heart"></i>
-                </button>
-                <button onClick={() => setPage("add")} className="fab-btn" aria-label="Add">
-                  <i className="fa-solid fa-plus"></i>
-                </button>
-                <button onClick={handleLogout} className="nav-btn" aria-label="Logout">
-                  <i className="fa-solid fa-right-from-bracket"></i>
-                </button>
-              </nav>
+              <button onClick={() => setPage("home")} className={`nav-btn ${page === "home" ? "active" : ""}`} aria-label="Home">
+                ⌂
+              </button>
+              <button onClick={() => setPage("favorites")} className={`nav-btn ${page === "favorites" ? "active" : ""}`} aria-label="Favorites">
+                ♥
+              </button>
+              <button onClick={() => setPage("add")} className="nav-btn" aria-label="Add">
+                ＋
+              </button>
+              <button onClick={handleLogout} className="nav-btn" aria-label="Logout">
+                ⎋
+              </button>
+            </nav>
             </>
           ) : (
             <LoginPage setPage={setPage} setToken={setToken} />
