@@ -463,67 +463,56 @@ h1, h2, h3 {
   bottom: 0;
   left: 0;
   width: 100vw;
-  background: var(--nav-bg);
+  background: #fff;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
+  justify-content: space-evenly;
+  align-items: center;
   z-index: 1000;
-  border-top: 2px solid var(--accent);
-  box-shadow: 0 -2px 12px rgba(244,143,177,0.10);
-  height: 70px;
+  border-top: 1px solid #eee;
+  box-shadow: 0 -2px 8px rgba(60,60,130,0.04);
+  height: 60px;
   padding: 0;
 }
 
 .nav-btn {
-  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+  background: none;
   border: none;
-  color: var(--nav-active);
-  font-size: 32px;
-  margin: 0 10px;
+  color: #ff4081;
+  font-size: 28px;
+  margin: 0 8px;
   cursor: pointer;
   transition: color 0.18s, transform 0.18s, background 0.18s;
-  border-radius: 50%;
-  padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(244,143,177,0.10);
+  border-radius: 8px;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.nav-btn.active {
+.nav-btn.active, .nav-btn:hover {
   color: #fff;
-  background: linear-gradient(135deg, #f06292 0%, #f8bbd0 100%);
-  transform: scale(1.18);
-  box-shadow: 0 4px 16px #f06292a0;
-}
-.nav-btn:hover {
-  color: #fff;
-  background: linear-gradient(135deg, #f06292 0%, #f8bbd0 100%);
-  transform: scale(1.18);
+  background: #ff4081;
 }
 
 .fab-btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-32px);
-  bottom: 0;
-  background: var(--accent);
-  color: #fff;
+  /* Remove FAB styling, make it look like a normal nav button */
+  background: none;
   border: none;
-  border-radius: 50%;
-  width: var(--fab-size);
-  height: var(--fab-size);
+  color: #ff4081;
+  font-size: 28px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: color 0.18s, transform 0.18s, background 0.18s;
+  border-radius: 8px;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 38px;
-  box-shadow: 0 4px 24px rgba(255,64,129,0.18);
-  z-index: 1100;
-  cursor: pointer;
-  transition: background 0.18s, transform 0.18s;
+  position: static;
+  box-shadow: none;
 }
 .fab-btn:active, .fab-btn:hover {
-  background: #e91e63;
-  transform: translateX(-50%) translateY(-36px) scale(1.08);
+  color: #fff;
+  background: #ff4081;
 }
 
 .add-recipe-form, .add-category-form {
@@ -656,20 +645,12 @@ h1, h2, h3 {
     max-width: 99vw;
   }
   .bottom-nav {
-    height: 64px;
-    padding: 0;
-  }
-  .nav-btn {
-    font-size: 28px;
-    padding: 10px 10px;
-    margin: 0 4px;
-  }
-  .fab-btn {
-    width: 54px;
     height: 54px;
-    font-size: 30px;
-    bottom: 10px;
-    transform: translateX(-50%) translateY(-24px);
+  }
+  .nav-btn, .fab-btn {
+    font-size: 22px;
+    padding: 6px 8px;
+    margin: 0 2px;
   }
 }
 /*
