@@ -465,44 +465,47 @@ h1, h2, h3 {
   width: 100vw;
   background: var(--nav-bg);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-end;
   z-index: 1000;
-  border-top: 1.5px solid var(--border-color);
-  box-shadow: 0 -4px 24px rgba(60,60,130,0.10);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 -2px 12px rgba(244,143,177,0.10);
   height: 70px;
-  padding: 0 24px;
+  padding: 0;
 }
 
 .nav-btn {
-  background: none;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
   border: none;
-  color: var(--muted);
-  font-size: 28px;
-  margin: 0 8px;
+  color: var(--nav-active);
+  font-size: 32px;
+  margin: 0 10px;
   cursor: pointer;
   transition: color 0.18s, transform 0.18s, background 0.18s;
   border-radius: 50%;
-  padding: 8px 10px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(244,143,177,0.10);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 1;
 }
 .nav-btn.active {
-  color: var(--nav-active);
-  background: var(--accent-light);
+  color: #fff;
+  background: linear-gradient(135deg, #f06292 0%, #f8bbd0 100%);
   transform: scale(1.18);
-  box-shadow: 0 4px 16px #ff40812a;
+  box-shadow: 0 4px 16px #f06292a0;
 }
 .nav-btn:hover {
-  color: var(--nav-active);
-  background: var(--accent-light);
+  color: #fff;
+  background: linear-gradient(135deg, #f06292 0%, #f8bbd0 100%);
   transform: scale(1.18);
 }
 
 .fab-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-32px);
+  bottom: 0;
   background: var(--accent);
   color: #fff;
   border: none;
@@ -514,16 +517,13 @@ h1, h2, h3 {
   justify-content: center;
   font-size: 38px;
   box-shadow: 0 4px 24px rgba(255,64,129,0.18);
-  z-index: 2;
+  z-index: 1100;
   cursor: pointer;
   transition: background 0.18s, transform 0.18s;
-  margin: 0 12px;
-  position: static;
-  transform: none;
 }
 .fab-btn:active, .fab-btn:hover {
   background: #e91e63;
-  transform: scale(1.08);
+  transform: translateX(-50%) translateY(-36px) scale(1.08);
 }
 
 .add-recipe-form, .add-category-form {
@@ -657,18 +657,19 @@ h1, h2, h3 {
   }
   .bottom-nav {
     height: 64px;
-    padding: 0 8px;
+    padding: 0;
   }
   .nav-btn {
-    font-size: 24px;
-    padding: 6px 6px;
-    margin: 0 2px;
+    font-size: 28px;
+    padding: 10px 10px;
+    margin: 0 4px;
   }
   .fab-btn {
     width: 54px;
     height: 54px;
     font-size: 30px;
-    margin: 0 6px;
+    bottom: 10px;
+    transform: translateX(-50%) translateY(-24px);
   }
 }
 /*
