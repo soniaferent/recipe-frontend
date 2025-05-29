@@ -1,4 +1,5 @@
-
+/*
+==================== OLD CSS ====================
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
@@ -131,7 +132,6 @@ margin-right: 15px;
 .nav-btn:hover {
   transform: scale(1.2);
 }
-/* Form container styling */
 .add-recipe-form {
   display: flex;
   flex-direction: column;
@@ -141,7 +141,6 @@ margin-right: 15px;
 
 }
 
-/* Form input styling */
 .add-recipe-form input, .add-recipe-form button {
   padding: 10px;
   border-radius: 10px;
@@ -150,7 +149,6 @@ margin-right: 15px;
   margin-bottom: 10px;
 }
 
-/* Form button styling */
 .add-recipe-form button {
   background-color: #f0a5b4;
   color: #111;
@@ -275,4 +273,283 @@ padding: 10px;
 .delete-category-button:hover {
   background-color: #cc0000;
 }
+==================== END OLD CSS ====================
+*/
 
+/*
+==================== MODERNIZED CSS ====================
+*/
+:root {
+  --background: #18181b;
+  --foreground: #f4f4f5;
+  --highlight: #23272f;
+  --card-bg: #23232b;
+  --card-shadow: 0 8px 32px rgba(80,80,255,0.10);
+  --border-color: #333;
+  --accent: #7c3aed;
+  --accent-light: #a78bfa;
+  --danger: #ef4444;
+  --success: #22d3ee;
+  --radius: 16px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color-scheme: dark;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  padding: 40px 12px 100px 12px;
+  background: var(--background);
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 18px;
+  background: var(--highlight);
+  width: 100%;
+  max-width: 520px;
+  margin: 32px auto 0 auto;
+  border: 1.5px solid var(--accent-light);
+  border-radius: var(--radius);
+  font-size: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: border 0.2s;
+}
+
+.recipe-list {
+  margin-top: 36px;
+  flex-grow: 1;
+  padding: 0 10px 100px 10px;
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.recipe-card, .fav-recipe-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px 20px 24px 20px;
+  box-shadow: var(--card-shadow);
+  border: 1.5px solid var(--highlight);
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+.recipe-card:hover, .fav-recipe-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 40px 0 rgba(124,58,237,0.10);
+  border-color: var(--accent-light);
+}
+
+.recipe-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2.5px solid var(--accent-light);
+  background: #222;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.08);
+}
+
+.fav-button, .delete-button, .update-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--foreground);
+  margin: 0 6px;
+  transition: color 0.18s, transform 0.18s;
+  border-radius: 50%;
+  padding: 6px;
+}
+.fav-button:hover { color: var(--accent); background: #23272f; }
+.delete-button:hover { color: var(--danger); background: #23272f; }
+.update-button:hover { color: var(--success); background: #23272f; }
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--highlight);
+  padding: 20px 0 14px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  border-top: 2px solid var(--accent-light);
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.10);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  margin: 0 22px;
+  cursor: pointer;
+  transition: color 0.18s, transform 0.18s;
+  border-radius: 50%;
+  padding: 8px 12px;
+}
+.nav-btn.active {
+  color: var(--accent);
+  background: #23232b;
+  transform: scale(1.18);
+}
+.nav-btn:hover {
+  color: var(--success);
+  background: #23232b;
+  transform: scale(1.18);
+}
+
+.add-recipe-form, .add-category-form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 22px 22px 22px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  margin: 24px 0;
+  box-shadow: var(--card-shadow);
+  max-width: 420px;
+  width: 100%;
+  border: 1.5px solid var(--highlight);
+}
+.add-recipe-form input, .add-recipe-form button, .add-recipe-form select,
+.add-category-form input, .add-category-form textarea, .add-category-form button {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-color);
+  font-size: 17px;
+  margin-bottom: 14px;
+  background: #23232b;
+  color: var(--foreground);
+  transition: border 0.18s;
+}
+.add-recipe-form input:focus, .add-category-form input:focus, .add-category-form textarea:focus {
+  border: 2px solid var(--accent);
+  outline: none;
+}
+.add-recipe-form button, .add-category-form button {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+  color: #18181b;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+  border: none;
+  letter-spacing: 0.04em;
+}
+.add-recipe-form button:hover, .add-category-form button:hover {
+  background: linear-gradient(90deg, var(--success) 0%, var(--accent-light) 100%);
+  color: #fff;
+  transform: scale(1.06);
+}
+
+.sort-dropdown {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 24px auto;
+  border-radius: 10px;
+  background: var(--highlight);
+  font-size: 17px;
+  border: 1.5px solid var(--accent-light);
+  color: var(--foreground);
+  padding: 12px;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 44px;
+}
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  background: var(--highlight);
+  padding: 12px 22px;
+  margin: 8px 0;
+  border-radius: 10px;
+  color: #fff;
+  align-items: center;
+  font-size: 17px;
+}
+.delete-category-button {
+  background: var(--danger);
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.18s;
+  font-size: 15px;
+}
+.delete-category-button:hover {
+  background: #b91c1c;
+}
+
+.warning {
+  background: yellow;
+  color: red;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.loading {
+  text-align: center;
+  font-weight: bold;
+  padding: 12px;
+}
+
+.recipe-statistics {
+  background: var(--highlight);
+  border-radius: 12px;
+  padding: 22px 30px;
+  margin: 22px auto;
+  color: var(--foreground);
+  box-shadow: var(--card-shadow);
+  max-width: 440px;
+  font-size: 18px;
+}
+
+@media (max-width: 800px) {
+  .recipe-list {
+    grid-template-columns: 1fr;
+    padding: 0 2px 100px 2px;
+  }
+  .add-recipe-form, .add-category-form {
+    max-width: 99vw;
+    padding: 18px 4px 12px 4px;
+  }
+  .search-bar, .sort-dropdown {
+    max-width: 99vw;
+  }
+}
+/*
+==================== END MODERNIZED CSS ====================
+*/
