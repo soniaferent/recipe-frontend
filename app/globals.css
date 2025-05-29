@@ -277,31 +277,38 @@ padding: 10px;
 */
 
 /*
-==================== MODERNIZED CSS ====================
+==================== GIRLY RECIPE APP CSS ====================
 */
 :root {
-  --background: #18181b;
-  --foreground: #f4f4f5;
-  --highlight: #23272f;
-  --card-bg: #23232b;
-  --card-shadow: 0 8px 32px rgba(80,80,255,0.10);
-  --border-color: #333;
-  --accent: #7c3aed;
-  --accent-light: #a78bfa;
-  --danger: #ef4444;
-  --success: #22d3ee;
-  --radius: 16px;
+  --background: #fff0f6;
+  --foreground: #4b224b;
+  --highlight: #ffe0ec;
+  --card-bg: #fff7fa;
+  --card-shadow: 0 8px 32px rgba(255, 182, 193, 0.15);
+  --border-color: #f8bbd0;
+  --accent: #f48fb1;
+  --accent-light: #fce4ec;
+  --danger: #f87171;
+  --success: #a7f3d0;
+  --nav-bg: #f8bbd0;
+  --nav-active: #f06292;
+  --radius: 18px;
+  --heading-font: 'Pacifico', 'Segoe Script', cursive;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  color-scheme: dark;
+  color-scheme: light;
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
   letter-spacing: 0.01em;
+}
+
+body {
+  background: linear-gradient(135deg, #fff0f6 0%, #ffe0ec 100%);
 }
 
 * {
@@ -314,7 +321,14 @@ html, body {
   min-height: 100vh;
   align-items: center;
   padding: 40px 12px 100px 12px;
-  background: var(--background);
+  background: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--nav-active);
+  margin-bottom: 18px;
+  letter-spacing: 0.04em;
 }
 
 .search-bar {
@@ -325,10 +339,10 @@ html, body {
   width: 100%;
   max-width: 520px;
   margin: 32px auto 0 auto;
-  border: 1.5px solid var(--accent-light);
+  border: 2px solid var(--accent);
   border-radius: var(--radius);
   font-size: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(255,182,193,0.10);
   transition: border 0.2s;
 }
 
@@ -351,14 +365,14 @@ html, body {
   border-radius: var(--radius);
   padding: 32px 20px 24px 20px;
   box-shadow: var(--card-shadow);
-  border: 1.5px solid var(--highlight);
+  border: 2px solid var(--accent-light);
   transition: transform 0.18s, box-shadow 0.18s;
   position: relative;
 }
 .recipe-card:hover, .fav-recipe-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 40px 0 rgba(124,58,237,0.10);
-  border-color: var(--accent-light);
+  box-shadow: 0 12px 40px 0 rgba(244,143,177,0.15);
+  border-color: var(--accent);
 }
 
 .recipe-image {
@@ -366,60 +380,66 @@ html, body {
   height: 200px;
   object-fit: cover;
   margin-bottom: 20px;
-  border-radius: 12px;
-  border: 2.5px solid var(--accent-light);
-  background: #222;
-  box-shadow: 0 2px 12px rgba(124,58,237,0.08);
+  border-radius: 14px;
+  border: 3px solid var(--accent);
+  background: #fff0f6;
+  box-shadow: 0 2px 12px rgba(244,143,177,0.10);
 }
 
 .fav-button, .delete-button, .update-button {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
   color: var(--foreground);
-  margin: 0 6px;
-  transition: color 0.18s, transform 0.18s;
+  margin: 0 8px;
+  transition: color 0.18s, transform 0.18s, background 0.18s;
   border-radius: 50%;
-  padding: 6px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(244,143,177,0.08);
 }
-.fav-button:hover { color: var(--accent); background: #23272f; }
-.delete-button:hover { color: var(--danger); background: #23272f; }
-.update-button:hover { color: var(--success); background: #23272f; }
+.fav-button:hover { color: #e75480; background: #ffe0ec; }
+.delete-button:hover { color: var(--danger); background: #ffe0ec; }
+.update-button:hover { color: #7c3aed; background: #e1bee7; }
 
 .bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: var(--highlight);
-  padding: 20px 0 14px 0;
+  background: var(--nav-bg);
+  padding: 18px 0 10px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   z-index: 1000;
-  border-top: 2px solid var(--accent-light);
-  box-shadow: 0 -2px 12px rgba(0,0,0,0.10);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 -2px 12px rgba(244,143,177,0.10);
 }
 
 .nav-btn {
-  background: none;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
   border: none;
-  color: #fff;
+  color: var(--nav-active);
   font-size: 32px;
-  margin: 0 22px;
+  margin: 0 10px;
   cursor: pointer;
-  transition: color 0.18s, transform 0.18s;
+  transition: color 0.18s, transform 0.18s, background 0.18s;
   border-radius: 50%;
-  padding: 8px 12px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(244,143,177,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-btn.active {
-  color: var(--accent);
-  background: #23232b;
+  color: #fff;
+  background: linear-gradient(135deg, #f06292 0%, #f8bbd0 100%);
   transform: scale(1.18);
+  box-shadow: 0 4px 16px #f06292a0;
 }
 .nav-btn:hover {
-  color: var(--success);
-  background: #23232b;
+  color: #fff;
+  background: linear-gradient(135deg, #f06292 0%, #f8bbd0 100%);
   transform: scale(1.18);
 }
 
@@ -433,16 +453,16 @@ html, body {
   box-shadow: var(--card-shadow);
   max-width: 420px;
   width: 100%;
-  border: 1.5px solid var(--highlight);
+  border: 2px solid var(--accent-light);
 }
 .add-recipe-form input, .add-recipe-form button, .add-recipe-form select,
 .add-category-form input, .add-category-form textarea, .add-category-form button {
   padding: 14px;
   border-radius: 10px;
-  border: 1.5px solid var(--border-color);
+  border: 2px solid var(--border-color);
   font-size: 17px;
   margin-bottom: 14px;
-  background: #23232b;
+  background: #fff0f6;
   color: var(--foreground);
   transition: border 0.18s;
 }
@@ -452,15 +472,17 @@ html, body {
 }
 .add-recipe-form button, .add-category-form button {
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
-  color: #18181b;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.18s, transform 0.18s;
   border: none;
   letter-spacing: 0.04em;
+  font-family: var(--heading-font);
+  font-size: 18px;
 }
 .add-recipe-form button:hover, .add-category-form button:hover {
-  background: linear-gradient(90deg, var(--success) 0%, var(--accent-light) 100%);
+  background: linear-gradient(90deg, #f06292 0%, #f8bbd0 100%);
   color: #fff;
   transform: scale(1.06);
 }
@@ -474,7 +496,7 @@ html, body {
   border-radius: 10px;
   background: var(--highlight);
   font-size: 17px;
-  border: 1.5px solid var(--accent-light);
+  border: 2px solid var(--accent);
   color: var(--foreground);
   padding: 12px;
 }
@@ -491,7 +513,7 @@ html, body {
   padding: 12px 22px;
   margin: 8px 0;
   border-radius: 10px;
-  color: #fff;
+  color: #4b224b;
   align-items: center;
   font-size: 17px;
 }
@@ -511,13 +533,14 @@ html, body {
 }
 
 .warning {
-  background: yellow;
-  color: red;
+  background: #fffde7;
+  color: #d72660;
   padding: 12px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 12px;
   border-radius: 8px;
+  border: 2px solid #f8bbd0;
 }
 
 .loading {
@@ -549,7 +572,15 @@ html, body {
   .search-bar, .sort-dropdown {
     max-width: 99vw;
   }
+  .bottom-nav {
+    padding: 10px 0 6px 0;
+  }
+  .nav-btn {
+    font-size: 28px;
+    padding: 10px 10px;
+    margin: 0 4px;
+  }
 }
 /*
-==================== END MODERNIZED CSS ====================
+==================== END GIRLY RECIPE APP CSS ====================
 */
