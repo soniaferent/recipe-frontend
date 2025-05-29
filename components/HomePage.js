@@ -63,9 +63,9 @@ export default function HomePage({ recipes, search, setSearch, sortOption, setSo
   Category: {recipe.category && recipe.category.name ? recipe.category.name : "Unknown"}
 </p>
             </div>
-            <button className="fav-button" onClick={() => toggleFavorite(recipe)}>🤍</button>
+            <button className="fav-button" onClick={() => toggleFavorite(recipe)}>♥</button>
             <button className="delete-button" onClick={() => deleteRecipe(recipe.id)}>🗑</button>
-            <button className="update-button" onClick={() => handleUpdate(recipe)}>✏️</button>
+            <button className="update-button" onClick={() => handleUpdate(recipe)}>✎</button>
           </div>
         ))}
       </div>
